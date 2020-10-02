@@ -2,8 +2,8 @@
 
 ## How to run:
 
-> cd gen-test
-> docker-compose up
+1. cd gen-test
+2. docker-compose up
 
 
 ## Try accessing following APIs using Postman (or other REST clients):
@@ -23,6 +23,8 @@ Sample Response:
 }`
 
 2. http://localhost:5000/get-data/eb8d291c-3f86-462a-9ad3-6958f26225c8
+
+Sample Response:
 `{
     "Title": "Hello",
     "UUID4": "eb8d291c-3f86-462a-9ad3-6958f26225c8",
