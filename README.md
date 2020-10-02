@@ -2,8 +2,9 @@
 
 ## How to run:
 
-1. cd gen-test
-2. docker-compose up
+1. git clone https://github.com/meghana0507/gen-test.git
+2. cd gen-test
+3. docker-compose up
 
 
 ## Try accessing following APIs using Postman (or other REST clients):
