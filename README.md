@@ -2,16 +2,16 @@
 
 ## How to run:
 
-> `cd gen-test`
-> `docker-compose up`
+> cd gen-test
+> docker-compose up
 
 
 ## Try accessing following APIs using Postman (or other REST clients):
 
 1. http://localhost:5000/post-data
 
-`Request data:
-{
+Request data:
+`{
     "Title": "Hello"
 }`
 
