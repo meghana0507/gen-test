@@ -1,0 +1,48 @@
+version: '3.5'
+
+services:
+  webapp:
+    container_name: genity-app
+    image: genity-app:v1
+    build: 
+        context: .
+        dockerfile: Dockerfile
+    depends_on:
+        - mysqldb 
+    restart: on-failure
+    ports:
+        - '5000:5000'
+    environment: 
+        - DB_HOST
+        - DB_USER
+        - DB_PORT
+        - DB_NAME
+        - DB_PASSWORD
+    volumes:
+        - 'api:/app/'
+    networks:
+        - genity-network
+
+  mysqldb:
+    container_name: genity-db
+    image: mysql:5.7
+    ports: 
+        - 3306:3306
+    environment: 
+        - MYSQL_ROOT_HOST=${DB_HOST} 
+        - MYSQL_USER=${DB_USER}
+        - MYSQL_PASSWORD=${DB_PASSWORD}
+        - MYSQL_DATABASE=${DB_NAME}
+        - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+    volumes:
+        - dbmysql:/var/lib/mysql
+    networks:
+        - genity-network
+  
+volumes:
+    api:
+    dbmysql:                   
+             
+networks:
+    genity-network:
+        driver: bridge
