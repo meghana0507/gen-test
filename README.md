@@ -36,4 +36,3 @@ Sample Response:
 ## Notes:
 
 1. Used Docker version 17.12.0-ce
-2. I have pushed .env file to git so this can be tested directly, ideally this file will be added in .gitignore
